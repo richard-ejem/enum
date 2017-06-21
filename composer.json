@@ -1,0 +1,25 @@
+{
+    "name": "richard-ejem/enum",
+    "type": "library",
+    "description": "Ultralightweight enum type for PHP",
+    "keywords": [
+        "php",
+        "enum"
+    ],
+    "license": [
+        "BSD-3-Clause",
+        "GPL-2.0",
+        "GPL-3.0"
+    ],
+    "require": {
+        "php": ">=7"
+    },
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ejem\\Enum\\": "src/"
+        }
+    }
+}
