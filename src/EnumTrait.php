@@ -32,8 +32,9 @@ trait EnumTrait
      * current enum class as a value.
      *
      * @throws InvalidEnumValueException
+     * @return void
      */
-    public static function assertValidValue($value): void
+    public static function assertValidValue($value)
     {
         if (!static::isValidValue($value)) {
             throw new InvalidEnumValueException(sprintf(

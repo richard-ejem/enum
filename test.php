@@ -2,7 +2,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-function assertTrue(bool $condition, string $message = 'Assertion failed'): void {
+function assertTrue(bool $condition, string $message = 'Assertion failed') {
     if (!$condition) {
         throw new \AssertionError($message);
     }
@@ -11,7 +11,7 @@ function assertThrows(
     callable $callback,
     string $throwableInstance = \Throwable::class,
     $message = 'Expected throwable was not thrown'
-): void {
+) {
     try {
         $callback();
         throw new \AssertionError($message);
