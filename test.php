@@ -2,7 +2,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-function assert(bool $condition, string $message = 'Assertion failed'): void {
+function assertTrue(bool $condition, string $message = 'Assertion failed'): void {
     if (!$condition) {
         throw new \AssertionError($message);
     }
@@ -35,12 +35,12 @@ class Enum
     use \Ejem\Enum\EnumTrait;
 }
 
-assert(count(Zero::getPossibleValues()) === 0, 'Empty class has no enum values');
-assert(Enum::getPossibleValues() === ['x', 2], 'EnumTrait::getPossibleValues returns possible values');
-assert(Enum::isValidValue('x'), '"x" is valid value of Enum');
-assert(Enum::isValidValue(2), '2 as integer is valid value of Enum');
-assert(!Enum::isValidValue('2'), '"2" as string is not valid value of Enum');
-assert(!Enum::isValidValue('3'), '"3" as string is not valid value of Enum');
+assertTrue(count(Zero::getPossibleValues()) === 0, 'Empty class has no enum values');
+assertTrue(Enum::getPossibleValues() === ['x', 2], 'EnumTrait::getPossibleValues returns possible values');
+assertTrue(Enum::isValidValue('x'), '"x" is valid value of Enum');
+assertTrue(Enum::isValidValue(2), '2 as integer is valid value of Enum');
+assertTrue(!Enum::isValidValue('2'), '"2" as string is not valid value of Enum');
+assertTrue(!Enum::isValidValue('3'), '"3" as string is not valid value of Enum');
 
 assertThrows(function () {
     Enum::assertValidValue('3');
@@ -48,4 +48,4 @@ assertThrows(function () {
 
 Enum::assertValidValue('x'); // we do not expect exception there
 
-echo 'All tests passed.';
+echo 'All tests passed.' . PHP_EOL;
